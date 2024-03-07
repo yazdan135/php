@@ -15,7 +15,7 @@ for($q=1; $q<=10; $q++){
 
 // Table with num
 
-$tableNum = 64;
+$tableNum = 9;
 for($w=1; $w<=10; $w++){
     echo "<br> $tableNum x $w = " .$tableNum*$w;
 }
