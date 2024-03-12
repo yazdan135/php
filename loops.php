@@ -20,4 +20,21 @@ for($w=1; $w<=10; $w++){
     echo "<br> $tableNum x $w = " .$tableNum*$w;
 }
 
+// While Loop
+
+$number = 80;
+while($number<=85){
+    echo "<br> This is while loop $number";
+    $number++;
+}
+
+// Do While Loop
+
+$apple = 30;
+do{
+    echo "<br> This is do while loop $apple";
+    $apple++;
+}
+while($apple<=33)
+
 ?>
