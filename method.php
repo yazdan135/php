@@ -33,7 +33,7 @@
 
                     <div class="form-grp">
                         <label for="">password</label>
-                        <input type="password" name="passowrd" class="form-control">
+                        <input type="password" name="password" class="form-control">
                     </div>
 
                     <div class="form-grp">
