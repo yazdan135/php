@@ -1,3 +1,5 @@
+<!-- Get method is used to get data in URL as well as on front page while Post method is used to get data only on front page -->
+
 <?php
        echo "<pre>";
        print_r($_POST);
@@ -21,20 +23,40 @@
                 <form action="" method="POST">
                     <div class="form-grp">
                         <label for="">Username</label>
-                        <input type="text" class="form-control" name="username" id="">
+                        <input type="text" name="username" class="form-control">
                     </div>
 
                     <div class="form-grp">
                         <label for="">Email</label>
-                        <input type="email" class="form-control" name="email" id="">
+                        <input type="email" name="email" class="form-control">
                     </div>
 
                     <div class="form-grp">
                         <label for="">password</label>
-                        <input type="password" class="form-control" name="passowrd" id="">
+                        <input type="password" name="passowrd" class="form-control">
                     </div>
 
-                    <button type="submit" value="submit" class="btn btn-dark mt-3" name="submit">submit</button>
+                    <div class="form-grp">
+                        <label for="">Select your course</label> <br>
+                        <input type="radio" name="course" value="Flutter">Flutter <br>
+                        <input type="radio" name="course" value="Python">Python <br>
+                        <input type="radio" name="course" value="JAVA">JAVA <br>
+                        <input type="radio" name="course" value="NEXT JS">NEXT JS <br>
+                    </div>
+
+                    <div class="form-grp">
+                        <label for="">Select your course</label> <br>
+                        <input type="checkbox" name="food[]" value="FRIES">FRIES <br>
+                        <input type="checkbox" name="food[]" value="STEAK">STEAK <br>
+                        <input type="checkbox" name="food[]" value="SANDWICH">SANDWICH <br>
+                        <input type="checkbox" name="food[]" value="BURGER">BURGER <br>
+                    </div>
+                    
+
+                        <input type="password" class="form-control" name="passowrd" id="">
+
+
+                    <button type="submit" value="submit" name="submit" class="btn btn-dark mt-3">submit</button>
                 </form>
             </div>
         </div>
