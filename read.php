@@ -1,9 +1,9 @@
 <!-- fetch data on new file -->
 
 <?php
-include("config/connect.php");
+include("config/one.php");
 
-$sql = "select * from users";
+$sql = "select * from user";
 $result = $conn->query($sql);
 
 if ($result == true) {

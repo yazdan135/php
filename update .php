@@ -1,9 +1,9 @@
 <!-- Update in database (admin php) -->
 
 <?php
-    include("config/connect.php");
+    include("config/one.php");
 
-    $sql = "Update Users set Name = 'Shapatar Man' where id = 2";
+    $sql = "Update User set Name = 'Shapatar Man' where id = 2";
     $result =$conn->query($sql);
 
     if($result == true){

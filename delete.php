@@ -1,7 +1,7 @@
 <?php
     include("config/one.php");
 
-    $sql = "delete from users where id = 3";
+    $sql = "delete from user where id = 3";
     $result = $conn->query($sql);
 
     if($result == true){

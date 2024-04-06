@@ -1,24 +1,45 @@
 <?php
+     include("../config/one.php");
 
-include("config/one.php");
+     if(isset($_POST['submit'])){
+         $username = $_POST['username'];
+         $email = $_POST['email'];
+         $password = $_POST['password'];
 
-if(isset($_POST['submit'])){
-    $username = $_POST['username'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+         $image = $_FILES['image']['name'];
 
-    $sql = "insert into user (name, email, password) values('$username', '$email', '$password')";
-    $result = mysqli_query($conn , $sql);
+         $sql = "insert into employee (name , email, password ,image) values 
+         ('$username' , '$email' , '$password' , '$image')";
+         $result = mysqli_query($conn, $sql);
+         if($result == true){
+             echo "<br> Your record has been inserted";
+         }
 
-    if($result == true){
-        echo "<br> Your record has been inserted";
-    }
-    else{
-        echo "<br> No record inserted";
-    }
-}
+         if(isset($_FILES['image'])){
+            $file_name = $_FILES['image']['name'];
+            $file_size = $_FILES['image']['size'];
+            $file_tmp = $_FILES['image']['tmp_name'];
+            $file_type = $_FILES['image']['type'];
+
+            move_uploaded_file($file_tmp , "image/" .$file_name);
+         }
+     }
 
 ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -32,7 +53,7 @@ if(isset($_POST['submit'])){
 <div class="container">
         <div class="row">
             <div class="col-lg-6">
-                <form action="" method="POST">
+                <form action="" method="POST" enctype = "multipart/form-data">
                     <div class="form-grp">
                         <label for="">Username</label>
                         <input type="text" name="username" class="form-control">
@@ -48,11 +69,15 @@ if(isset($_POST['submit'])){
                         <input type="password" name="password" class="form-control">
                     </div>
                     
+                    <div class="form-grp">
+                         <label for="">Select Your Image</label><br>
+                         <input type="file" name="image" class="form-control" id=""><br>
+                    </div>
+                    
                    <button type="submit" value="submit" name="submit" class="btn btn-dark mt-3">submit</button>
                 </form>
             </div>
         </div>
     </div>
- 
 </body>
 </html>

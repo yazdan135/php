@@ -2,7 +2,7 @@
 
 include("config/one.php");
 
-$sql = "insert into users (name, email, password) values('Dexter', 'dexter@gmail.com', 'dexter@123')";
+$sql = "insert into user (name, email, password) values('Dexter', 'dexter@gmail.com', 'dexter@123')";
 $result = $conn->query($sql);
 
 if($result == true){
