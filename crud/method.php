@@ -5,7 +5,6 @@
          $username = $_POST['username'];
          $email = $_POST['email'];
          $password = $_POST['password'];
-
          $image = $_FILES['image']['name'];
 
          $sql = "insert into employee (name , email, password ,image) values 
@@ -27,20 +26,6 @@
 
 ?>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,7 +35,7 @@
     <title>Document</title>
 </head>
 <body>
-<div class="container">
+<div class="container">                          
         <div class="row">
             <div class="col-lg-6">
                 <form action="" method="POST" enctype = "multipart/form-data">
@@ -77,6 +62,18 @@
                    <button type="submit" value="submit" name="submit" class="btn btn-dark mt-3">submit</button>
                 </form>
             </div>
+        <div class="col-lg-6">
+            <?php
+            echo "<pre>";
+            print_r($_POST);
+            echo "</pre>";
+
+
+            echo "<pre>";
+            print_r($_FILES);
+            echo "</pre>";
+            ?>
+        </div>
         </div>
     </div>
 </body>
